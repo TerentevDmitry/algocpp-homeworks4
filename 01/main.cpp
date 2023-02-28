@@ -30,6 +30,7 @@ int main()
         std::cin >> arrActualSize;
     }
 
+
     bool ErrorUserData = false; // для проверки "Ошибка! Логический размер массива не может превышать фактический!"
 
     do
