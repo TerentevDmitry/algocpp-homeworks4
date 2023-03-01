@@ -59,7 +59,7 @@ int main()
             
     } while (!ErrorUserData);
     
-    //std::cin.clear();
+    
     int userData = 0;
 
     int* arr = new int[arrActualSize] {};
