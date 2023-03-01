@@ -1,9 +1,16 @@
 #include "printDynamicArray.h"
 
-                                        //5                   //3
-void PrintDynamicArray(int* arr, int arrActualSize, int arrLogicalSize)
+                                                          
+void PrintDynamicArray(int* arr, int arrActualSize, int arrLogicalSize, bool stopAppend)
 {
-    std::cout << "Динамический массив:";
+    if (!stopAppend)
+    {
+        std::cout << "Динамический массив: ";
+    }
+    else
+    {
+        std::cout << "Спасибо! Ваш массив: ";
+    };
 
     for (int i = 0; i < arrLogicalSize; i++)
     {

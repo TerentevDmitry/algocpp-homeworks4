@@ -2,5 +2,5 @@
 #include <iostream>
 
 
-void PrintDynamicArray(int* arr, int arrActualSize, int arrLogicalSize);
+void PrintDynamicArray(int* arr, int arrActualSize, int arrLogicalSize, bool stopAppend);
 

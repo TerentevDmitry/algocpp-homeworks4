@@ -5,6 +5,8 @@
 #include <iostream>
 #include <string>
 #include "printDynamicArray.h"
+#include "appendToDynamicArray.h"
+
 
 int main()
 {
@@ -64,8 +66,14 @@ int main()
         std::cin >> userData;
         arr[i] = userData;
     };
-
-    PrintDynamicArray(arr, arrActualSize, arrLogicalSize);
+    
+    std::cout << std::endl;
+    PrintDynamicArray(arr, arrActualSize, arrLogicalSize, false);
+    
+    std::cout << std::endl;
+    appendToDynamicArray(arr, &arrActualSize, &arrLogicalSize);
+    
+    std::cout << std::endl;
 
     delete[]arr;
     arr = nullptr;
