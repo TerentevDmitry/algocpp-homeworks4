@@ -1,7 +1,6 @@
-﻿// # Домашнее задание к занятию «Динамический массив. Списки. Деки»
-// # Задача 1. Вывод изменяемого динамического массива
-// В этом задании нужно реализовать функцию вывода динамического массива целых чисел на экран.
-
+﻿// Домашнее задание к занятию «Динамический массив. Списки. Деки»
+// Задача 2. Добавление в изменяемый динамический массив
+// В этом задании вам нужно реализовать функцию добавления нового элемента в конец динамического массива целых чисел/
 
 #include <iostream>
 #include <string>
@@ -13,11 +12,11 @@ int main()
 
     int arrActualSize = 0; //фактичеcкий размер массива
     int arrLogicalSize = 0; //логический размер массива
-    
+
 
     std::cout << "Введите фактичеcкий размер массива:> ";
     std::cin >> arrActualSize;
-    
+
     while (!std::cin.good() || arrActualSize <= 0)
     {
         std::cin.clear();
@@ -48,13 +47,13 @@ int main()
             std::cout << "Ошибка! Логический размер массива не может превышать фактический!" << std::endl;
             ErrorUserData = false;
         }
-        else 
+        else
         {
             ErrorUserData = true;
         }
-            
+
     } while (!ErrorUserData);
-    
+
     int userData = 0;
     int* arr = new int[arrActualSize] {};
 
@@ -62,7 +61,7 @@ int main()
     for (int i = 0; i < arrLogicalSize; i++)
     {
         std::cout << "Введите arr[" << i << "]:> ";
-        std::cin >> userData;   
+        std::cin >> userData;
         arr[i] = userData;
     };
 
