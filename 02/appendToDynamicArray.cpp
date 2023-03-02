@@ -1,10 +1,14 @@
 #include "appendToDynamicArray.h"
 
-											
+enum class DynamicArrayMessage
+{
+    Exit
+};
+
 void appendToDynamicArray(int* &arr, int* arrActualSize, int* arrLogicalSize) 
 {
     int appendUserData = 0;
-    bool stopAppend = false;
+    bool stoppingActions = false;
 
 	do
 	{
@@ -19,10 +23,10 @@ void appendToDynamicArray(int* &arr, int* arrActualSize, int* arrLogicalSize)
             std::cout << "Введите элемент для добавления(0 - выход без добавлений):> ";
             std::cin >> appendUserData;
         }
-        if (appendUserData == 0)
+        if (appendUserData == static_cast<int> (DynamicArrayMessage::Exit))
         {
-            bool stopAppend = true;
-            PrintDynamicArray(arr, *arrActualSize, *arrLogicalSize, stopAppend);
+            bool stoppingActions = true;
+            PrintDynamicArray(arr, *arrActualSize, *arrLogicalSize, stoppingActions);
             
             return;
         }
@@ -45,16 +49,8 @@ void appendToDynamicArray(int* &arr, int* arrActualSize, int* arrLogicalSize)
             arr[*arrLogicalSize] = appendUserData; // добавляем значение в конец массива.
             ++* arrLogicalSize; //прибавляем единицу к логическому размеру
        
-            PrintDynamicArray(arr, *arrActualSize, *arrLogicalSize, stopAppend);
+            PrintDynamicArray(arr, *arrActualSize, *arrLogicalSize, stoppingActions);
         
 	} while (true);
-
-
-
-
-
-
-
-
 };
 
